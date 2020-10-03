@@ -1,0 +1,11 @@
+#!/bin/bash
+##################################################################################################################
+read -p "Are you torrenting? [y/n] "  -n 1 -r
+echo	
+if [[ ! $REPLY =~ ^[Nn]$ ]]	#I had to switch the yes and no for this and i have no idea why
+then
+	cyberghostvpn --connect --service-type openvpn --country-code US --city 'New York' --server 'newyork-s404-i09'
+elif [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+	cyberghostvpn --connect --service-type openvpn --country-code US --city
+fi
